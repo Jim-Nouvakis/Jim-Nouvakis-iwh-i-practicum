@@ -18,7 +18,7 @@ const PRIVATE_APP_ACCESS = '';
 app.get("/", async (req, res) => {
     try {
         const response = await axios.get(
-            `https://api.hubapi.com/crm/v3/objects/${CUSTOM_OBJECT_ID}?properties=name,species,favorite_food`,
+            `https://api.hubapi.com/crm/v3/objects/${CUSTOM_OBJECT_ID}?properties=name,type,age`,
             {
                 headers: {
                     Authorization: `Bearer ${HUBSPOT_API_KEY}`,
@@ -26,6 +26,7 @@ app.get("/", async (req, res) => {
                 },
             }
         );
+
 
         const records = response.data.results || []; // Get records from response
 
