@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title= title
+    body
+        h1 Pet Records
+        a(href="/update-cobj") Add to this table
+        br
+        table(border="1")
+            tr
+                th Name
+                th Type
+                th Age
+            each record in records
+                tr
+                    td= record.properties.name
+                    td= record.properties.type
+                    td= record.properties.age
